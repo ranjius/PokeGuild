@@ -1,0 +1,28 @@
+name: PokeGuild
+version: '${project.version}'
+main: rj.ranjiu.pokeguild.PokeGuild
+api-version: 1.17
+depend: [ PlaceholderAPI,VexView ]
+softdepend: [PlayerPoints,Vault]
+authors: [ ranjiu-super, Niming ]
+description: A guild has Pokemon function for Minecraft plugin server
+website: www.pokeFES.net
+commands:
+  PokeGuild:
+    aliases:
+      - pgd
+    description: PokeGuild main command
+    permission: "pgd.main"
+
+permissions:
+  pgd.*:
+    default: not op
+    children:
+      pgd.command:
+        default: not op
+        children:
+          pgd.command.reload:
+            default: op
+
+          pgd.command.gui:
+            default: not op
